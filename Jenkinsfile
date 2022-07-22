@@ -1,8 +1,4 @@
-node{
-    
-   
-
-    
+node{   
        properties([
         parameters([
             string(name: 'IMAGE_NAME', defaultValue: 'python-app', description: 'The name of the image to build'),
@@ -22,6 +18,6 @@ node{
    
     stage('Build image'){
         echo 'Building image...'
-        bat '''docker build -t %IMAGE_NAME%:%IMAGE_TAG% .'''
+        sh '''docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'''
     }
 }
