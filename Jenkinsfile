@@ -18,6 +18,6 @@ node{
    
     stage('Build image'){
         echo 'Building image...'
-        sh '''docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'''
+        sh '''sudo docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'''
     }
 }
